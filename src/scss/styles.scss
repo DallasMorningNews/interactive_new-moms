@@ -1,0 +1,589 @@
+  /*                       */
+ /* Default style imports */
+/*                       */
+
+@import 'base';
+@import 'header';
+@import 'footer';
+
+@import 'components/_videos';
+@import 'components/slideshows';
+
+
+/*
+*****************************************************************************
+  HEAD AND SLIDER STYLES
+
+  This styles the lede display and slides, along with the headline styles.
+*****************************************************************************
+*/
+
+#content-header {
+  height: calc(100vh - 51px);
+  background-color: $black33;
+  background-image: url('../images/kylia1-2400.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+#slides {
+  height: calc(100vh - 51px);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(15,15,15,.80);
+  @include transition(all, 1s, ease-out);
+  opacity: 0;
+}
+
+.intro-slide {
+  height: calc(100vh - 51px);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: $serif;
+  font-weight: bold;
+  display: table;
+  opacity: 0;
+  @include transition(all, 1s, ease-out);
+}
+
+.viewable {
+  opacity: 1 !important;
+  top: 0 !important;
+}
+
+.slide__content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  h3 {
+    background-color: white;
+    display: inline-block;
+    max-width: 90%;
+    padding: 10px;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 800px) {
+  .slide__content {
+    h3 {
+      @include type(2.4rem, 3rem, 0);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .slide__content {
+    h3 {
+      @include type(2.2rem, 3rem, 0);
+    }
+  }
+}
+
+#slide__timer {
+  width: 250px;
+  position: absolute;
+  bottom: 70px;
+  height: 1px;
+  background-color: $black66;
+  left: 50%;
+  margin-left: -125px;
+}
+
+#slide__progress {
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: $black245;
+  height: 1px;
+  // @include transition(all, .25s, ease-out);
+}
+
+#slide-5 {
+  background-image: url('../images/kylia2-2400.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#slides__skip {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  border: none;
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: $sans;
+  cursor: pointer;
+  z-index: 20;
+  @include type(1.4rem, 1.8rem, 0);
+  &:after {
+    @include psuedoElement(10px, 10px, absolute);
+    @include rotate(45deg);
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    left: 50%;
+    margin-left: -5px;
+  }
+}
+
+@media (max-width: 900px) {
+  #content-header {
+    background-image: url('../images/kylia1-1800.jpg');
+  }
+  #slide-5 {
+    background-image: url('../images/kylia2-1800.jpg');
+  }
+}
+
+@media (max-width: 600px) {
+  #content-header {
+    background-image: url('../images/kylia1-1200.jpg');
+  }
+  #slide-5 {
+    background-image: url('../images/kylia2-1200.jpg');
+  }
+}
+
+
+.content-well {
+  position: relative;
+  z-index: 10;
+}
+
+#story-head {
+  margin-top: -15vh;
+  min-height: 20vh;
+  padding: 2.4rem 10px 0;
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  max-width: 800px;
+  width: 90%;
+  font-family: $serif;
+  opacity: 0;
+  top: 100px;
+  @include transition(all, 1s, ease-out);
+}
+
+
+/*
+*****************************************************************************
+  SIX UP (NON-GRID SUPPORT)
+
+  Styles for the six-block for browsers that don't support grids. That means a
+  lot of floats, and child elements, and clears, and custom margins. Yuck.
+*****************************************************************************
+*/
+
+.six-block {
+  img, p {
+    width: 32%;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+    &:nth-child(4) {
+      clear: left;
+    }
+  }
+  @media (max-width: 900px) {
+    img, p {
+      width: 49%;
+      &:nth-child(3n+3) {
+        margin-right: 2%;
+      }
+      &:nth-child(4) {
+        clear: none;
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+      &:nth-child(odd) {
+        clear: left;
+      }
+    }
+  }
+}
+
+/*
+*****************************************************************************
+  SIX UP (GRID SUPPORT)
+
+  These are the css rules for the six up section for browsers that do support
+  CSS grids. CSS grid, yo.
+*****************************************************************************
+*/
+
+@supports (display: grid) {
+  .six-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2.4rem;
+  }
+  .six-block p, .six-block img {
+    width: 100%;
+    margin: 0 !important;
+  }
+  @media (max-width: 900px) {
+    .six-block {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
+
+
+/*
+*****************************************************************************
+  LETTER GRID SYSTEM (NON-GRID SUPPORT)
+
+  This styles the layout grid for the letters section for browsers that don't
+  support CSS grids. Lots of widths, floats, clears and margins.
+*****************************************************************************
+*/
+
+#letters {
+  width: 100%;
+  padding: 2.5% 10%;
+  background-color: $black33;
+  background-color: rga(255,255,253);
+  margin: 4.8rem 0;
+  color: white;
+}
+.chatter {
+  margin-bottom: 2.4rem;
+  max-width: 650px;
+  h4 {
+    font-weight: bold;
+  }
+  p {
+    @include type(1.4rem, 1.8rem);
+  }
+}
+
+.lg__item {
+  width: 49%;
+  float: left;
+  margin: 0 2% 2.4rem 0;
+  &:nth-of-type(2n+2) {margin: 0 0 2.4rem 0;}
+  &:nth-of-type(3n) {clear: left;}
+  img {
+    width: 100%;
+    opacity: .90;
+    cursor: pointer;
+    @include transition(all, .2s, ease-out);
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+/*
+*****************************************************************************
+  LETTER GRID SYSTEM (GRID SUPPORT)
+
+  These are the css rules for the letters sections for browsers that do support
+  CSS grids. Look at that shit. Look how easy it is.
+*****************************************************************************
+*/
+
+@supports (display: grid) {
+  #letter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2.4rem;
+  }
+  .lg__item {
+    width: auto;
+    margin: 0 !important;
+  }
+}
+
+/*
+*****************************************************************************
+  LETTER GRID OVERLAYS
+
+  Styles for the letter overlays that get displayed when a letter gets clicked
+  out of the letters section. Styles the overlay, the close buttons, and the
+  transitions into and out of view.
+*****************************************************************************
+*/
+
+$lg__overlay_height: 505px;
+
+.lg__wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
+  // @include transition(all, .75s, ease-out);
+  background-color: rgba($black33, .95);
+  height: 100vh;
+  z-index: 20;
+  overflow-y: auto;
+}
+
+.lg__overlay {
+  width: 95%;
+  opacity: 1;
+  position: absolute;
+  top: calc(50vh - 252px);
+  background-color: white;
+  box-shadow: 2px -2px 5px rgba($black15, .95), -2px 2px 5px rgba($black15, .95), -2px -2px 5px rgba($black15, .95), 2px 2px 5px rgba($black15, .95);
+  height: 550px;
+  display: block;
+  z-index: 15;
+  padding: 2.5%;
+  margin: 0 auto;
+  left: 2.5%;
+  overflow-y: auto;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 760px;
+  img {
+    width: 50%;
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.lg__content {
+  width: calc(95% - 760px);
+  float: right;
+  margin-right: 5%;
+  font-family: $serif;
+  p {
+    @include type(1.4rem, 1.8rem, 1.8rem);
+    color: $black33;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .lg__overlay {
+    background-size: 550px;
+    height: 395px;
+    top: calc(50vh - 198px);
+  }
+  .lg__content {
+    width: calc(95% - 550px);
+  }
+}
+
+@media (max-width: 900px) {
+  .lg__wrapper {
+    overflow-y: hidden;
+  }
+  .lg__overlay {
+    background-size: 100%;
+    height: 90vh;
+    top: 5vh;
+    padding-top: 72%;
+  }
+  .lg__content {
+    width: 100%;
+    margin-right: 0;
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 20px;
+  }
+}
+
+
+.lg__close {
+  position: absolute;
+  top: calc((50vh - 252px) + 20px);
+  z-index: 20;
+  right: calc(2.5% + 25px);
+  font-family: $sans;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: $black33;
+  color: $black245;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 30px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1150px) {
+  .lg__overlay {
+    background-size: 550px;
+    height: 395px;
+    top: calc(50vh - 198px);
+  }
+  .lg__content {
+    width: calc(95% - 550px);
+  }
+  .lg__close {
+    top: calc((50vh - 198px) + 20px)
+  }
+}
+
+@media (max-width: 900px) {
+  .lg__wrapper {
+    overflow-y: hidden;
+  }
+  .lg__overlay {
+    background-size: 100%;
+    height: 90vh;
+    top: 5vh;
+    padding-top: 72%;
+  }
+  .lg__content {
+    width: 100%;
+    margin-right: 0;
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 20px;
+  }
+  .lg__close {
+    top: 6vh;
+    right: calc(2.5% + 10px);
+  }
+}
+
+.lg--view {
+  top: 0;
+  opacity: 1;
+}
+
+#lg__overlay-0 .lg__overlay {
+  background-image: url("../images/_letter1-full.jpg");
+}
+
+#lg__overlay-1 .lg__overlay {
+  background-image: url("../images/_letter-yuryana-full.jpg");
+}
+
+#lg__overlay-2 .lg__overlay {
+  background-image: url("../images/_letter-griffin-full.jpg");
+}
+
+#lg__overlay-3 .lg__overlay {
+  background-image: url("../images/_letter-martin-full.jpg");
+}
+
+.no-scroll {
+  max-height: 100vh;
+  overflow-y: hidden;
+  // overflow-y: scroll !important;
+}
+
+/*
+*****************************************************************************
+  THREE-UP PHOTO COLLAGE STYLES
+
+  These are the css rules for the three-up photo collages, where the left photo
+  is the dominant image and is flanked on the right by two smaller images.
+*****************************************************************************
+*/
+
+.three-up {
+  img {
+    width: 32%;
+    float: right;
+    margin-bottom: 2%;
+  }
+  img:first-of-type {
+    width: 66%;
+    float: left;
+    margin-bottom: .3rem;
+  }
+  .cutline {
+    width: 66%;
+    clear: both;
+  }
+  @media (max-width: 740px) {
+    img {
+      width: 49%;
+      float: left;
+      margin-right: 2%;
+      margin-bottom: .3rem;
+    }
+    img:first-of-type {
+      width: 100%;
+      float: none;
+      margin-bottom: 2%;
+    }
+    img:last-of-type {
+      margin-right: 0;
+    }
+    .cutline {
+      width: 100%;
+    }
+  }
+}
+
+/*
+*****************************************************************************
+  SUBSCRIBE CALL TO ACTION
+*****************************************************************************
+*/
+
+.subscribe-cta, .inline-refer {
+  padding: 2.4rem 0;
+  margin: 4.8rem auto;
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  max-width: calc(750px - 10%);
+}
+
+.subscribe-cta h4, .inline-refer h4 {
+  font-weight: bold;
+}
+
+.subscribe-cta p, .inline-refer p {
+  font-family: "Gotham A", "Gotham B", Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.subscribe-cta a, .inline-refer a {
+  background-color: #0185d3;
+  font-family: "Gotham A", "Gotham B", Arial, sans-serif;
+  color: white;
+  padding: 10px;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 0;
+  -webkit-transtion: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.subscribe-cta a:visited, .inline-refer a:visited {
+  color: white;
+}
+
+.subscribe-cta a:hover, .inline-refer a:hover {
+  background-color: #0175ba;
+  text-decoration: none;
+}
+
+.subscribed .subscribe-cta, .subscribed .inline-refer {
+  display: none;
+}

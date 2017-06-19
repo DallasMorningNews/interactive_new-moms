@@ -1,0 +1,8 @@
+{%import 'partials/img.html' as img%}
+
+<div class="wide-block image-block three-up clearfix">
+  {{img.jpg('portrait-blue', 'alt text goes here', sizes='(min-width: 740px) 66vw, 95vw')}}
+  {{img.jpg('port-hair', 'alt text goes here', sizes='(min-width: 740px) 33vw, 50vw')}}
+  {{img.jpg('port-car', 'alt text goes here', sizes='(min-width: 740px) 33vw, 50vw')}}
+  <p class="cutline">{{embedContents.cutline}}</p>
+</div>
