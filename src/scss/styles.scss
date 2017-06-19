@@ -62,7 +62,7 @@
   vertical-align: middle;
   text-align: center;
   h3 {
-    background-color: white;
+    color: white;
     display: inline-block;
     max-width: 90%;
     padding: 10px;
@@ -117,8 +117,8 @@
   position: absolute;
   bottom: 40px;
   left: 50%;
-  margin-left: -50px;
-  width: 100px;
+  margin-left: -125px;
+  width: 250px;
   border: none;
   background: none;
   color: white;
@@ -469,21 +469,20 @@ $lg__overlay_height: 505px;
   opacity: 1;
 }
 
+
 #lg__overlay-0 .lg__overlay {
-  background-image: url("../images/_letter1-full.jpg");
-}
-
-#lg__overlay-1 .lg__overlay {
-  background-image: url("../images/_letter-yuryana-full.jpg");
-}
-
-#lg__overlay-2 .lg__overlay {
   background-image: url("../images/_letter-griffin-full.jpg");
 }
-
-#lg__overlay-3 .lg__overlay {
+#lg__overlay-1 .lg__overlay {
   background-image: url("../images/_letter-martin-full.jpg");
 }
+#lg__overlay-2 .lg__overlay {
+  background-image: url("../images/_letter-yuryana-full.jpg");
+}
+#lg__overlay-3 .lg__overlay {
+  background-image: url("../images/_letter-gonzales-full.jpg");
+}
+
 
 .no-scroll {
   max-height: 100vh;
@@ -515,6 +514,9 @@ $lg__overlay_height: 505px;
     width: 66%;
     clear: both;
   }
+  .col-mobile {
+    display: none;
+  }
   @media (max-width: 740px) {
     img {
       width: 49%;
@@ -532,6 +534,12 @@ $lg__overlay_height: 505px;
     }
     .cutline {
       width: 100%;
+    }
+    .col-desk {
+      display: none;
+    }
+    .col-mobile {
+      display: inline;
     }
   }
 }
@@ -586,4 +594,24 @@ $lg__overlay_height: 505px;
 
 .subscribed .subscribe-cta, .subscribed .inline-refer {
   display: none;
+}
+
+
+/*
+*****************************************************************************
+  NERD BOX
+*****************************************************************************
+*/
+
+.nerd-box {
+  width: 95%;
+  max-width: 650px;
+  font-family: $sans;
+  margin: 0 auto;
+  h5 {
+    font-weight: bold;
+  }
+  p {
+    @include type(1.4rem, 1.8rem, 1.8rem);
+  }
 }

@@ -133,5 +133,6 @@ DISPLAYING AND HIDING THE OVERLAYS
   });
 
   $('#portraits').easyslide();
+  $('#phone').easyslide();
 // -----------------------------------------------------------------------------
 });
