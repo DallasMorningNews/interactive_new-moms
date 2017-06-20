@@ -4,6 +4,7 @@ import $ from 'jquery';
 
 import './furniture';
 import './easyslide';
+import './tarrant';
 
 $(document).ready(() => {
 /*

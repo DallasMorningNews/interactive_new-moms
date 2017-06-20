@@ -1,0 +1,77 @@
+@import 'variables';
+
+.data {
+  font-family: $sans;
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+
+  h4, p {
+    color: #4d4d4d;
+  }
+
+  h4 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 25px;
+  }
+
+  p.sourceLine {
+    font-family: $sans;
+  	width: 100%;
+  	max-width: 650px;
+  	margin: 0 auto;
+    margin-bottom: 20px;
+    color: #797470;
+  }
+
+
+  .axis-title {
+    fill: black;
+    font-family: $sans;
+    font-size: 12px;
+  }
+
+  .axis {
+    font-size: 12px;
+  }
+
+  .y.axis .tick line{
+    opacity: 0.2;
+    stroke-dasharray: 3,3;
+  }
+
+  .dot {
+    fill: $chartGray;
+    fill-opacity: 0.5;
+    stroke: $black33;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .trendline {
+    stroke: $black33;
+    stroke-width: 1;
+  }
+}
+
+.d3tip {
+  line-height: 1.2;
+  // font-weight: bold;
+  padding: 10px;
+  background: white;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  font-family: $sans;
+  font-size: 14px;
+  z-index: 10;
+}
