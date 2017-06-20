@@ -90,7 +90,7 @@ SETTING UP THE OPENING ANIMATION
         clearInterval(progress);
       }
     }, 50);
-  }, 1500);
+  }, 500);
 
 
   // when the intro skip button i sclicked, hide the timer and the button,
@@ -112,7 +112,15 @@ DISPLAYING AND HIDING THE OVERLAYS
 
   // clicking an lg__item within the grid ...
   $('.lg__item').click(function () {
+    // $('html').on('scroll touchmove mousewheel', (e) => {
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   return false;
+    // });
     // ... gets the index value of the lg__item clicked
+    // const scTop = $('body').scrollTop();
+    // console.log(scTop);
+    // window.scrollTo(scTop, 0);
     const target = $(this).index();
 
     // ... adds the no-scroll class to the body, locking down the story text

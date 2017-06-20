@@ -1,11 +1,12 @@
 import $ from 'jquery';
+import 'hammerjs';
 
 $.fn.easyslide = function(frameObj) {
 
   var slideCounter = 0;
 
   var self = this;
-
+  console.log(self);
   // determine total slides
   var totalSlides = self.find(".slide").length;
 
@@ -46,7 +47,7 @@ $.fn.easyslide = function(frameObj) {
   // then check where we are in the slideshow
 
   function advanceSlide() {
-
+    console.log('test');
     if (slideCounter < totalSlides - 1) {
       slideCounter ++; // advancing the counter
 
@@ -106,8 +107,10 @@ $.fn.easyslide = function(frameObj) {
   // if you want to be able to swipe the slideshow on touch devices, un-note the following two lines
   // and make sure you call jquery.swipe.min.js in the index file
 
-  self.on("swipeleft", advanceSlide);
-  self.on("swiperight", rewindSlide);
+  var hammerSwipe = new Hammer(self[0]);
+
+  hammerSwipe.on("swipeleft", advanceSlide);
+  hammerSwipe.on("swiperight", rewindSlide);
 
 
   // update the position of the slide buttons if the window resizes
@@ -116,5 +119,4 @@ $.fn.easyslide = function(frameObj) {
           slidePosition();
       }, 150);
   });
-
 };
