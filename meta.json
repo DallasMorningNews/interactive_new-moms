@@ -1,10 +1,10 @@
 {
   "id": "40067615989",
   "name": "overlooked",
-  "pageTitle": "<Title>",
-  "shareTitle": "<Title>",
-  "shareText": "<Text>",
-  "tweetText": "<Text>",
+  "pageTitle": "Overlooked: A Dallas Morning News Investigation",
+  "shareTitle": "As women go to jail in record numbers, who’s watching out for their kids? No one",
+  "shareText": "No agency in the criminal justice system is responsible for the safety of children whose mothers go to jail, an investigation by The Dallas Morning News has found.",
+  "tweetText": "As women go to jail in record numbers, who’s watching out for their kids? No one.",
   "publishYear": 2017,
   "publishDate": "2017-06-22T09:00:00Z",
   "url": "https://interactives.dallasnews.com/2017/overlooked/",
@@ -24,7 +24,7 @@
     "dallas morning news",
     "dallas morning news newspaper"
   ],
-  "imgURL": "https://interactives.dallasnews.com/2017/new-moms/undefined",
+  "imgURL": "https://interactives.dallasnews.com/2017/overlooked/images/_share.jpg",
   "imgWidth": "1200",
   "imgHeight": "630",
   "sectionTwitter": "@dallasnews",
