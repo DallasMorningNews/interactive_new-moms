@@ -99,16 +99,16 @@
 }
 
 .d3tip {
-  line-height: 1.2;
+  line-height: 1.1em;
   // font-weight: bold;
   padding: 10px;
   background: white;
   font-family: $sans;
-  font-size: 14px;
+  font-size: 12px;
   z-index: 10;
   box-shadow: 1.5px 1.5px 3px rgba($black121, .25), -1.5px -1.5px 3px rgba($black121, .25), -1.5px 1.5px 3px rgba($black121, .25), 1.5px -1.5px 3px rgba($black121, .25);
 }
-.tip-date {
+.tip-date, #dateSpan {
   font-size: 1.1rem;
   line-height: 1.5rem;
   text-transform: uppercase;
@@ -116,7 +116,12 @@
   margin-bottom: .6rem;
   display: block;
 }
-.fem-perct {
+#femaleSpan {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.fem-perct, #femaleCount {
   font-size: 2.4rem;
   line-height: 3rem;
   font-weight: bold;

@@ -80,7 +80,7 @@ $(() => {
         .attr('y', -20)
         .attr('dy', '.71em')
         .style('text-anchor', 'start')
-        .text('Female Inmates');
+        .text('Female inmates');
 
     svg.append('path')
       .datum(data)
@@ -104,7 +104,7 @@ $(() => {
 
     // tooltip variables
     const tooltipWidth = 120;
-    const tooltipHeight = 40;
+    const tooltipHeight = 60;
 
     const tooltip = focus.append('g')
         .attr('class', 'tooltip')
@@ -126,6 +126,11 @@ $(() => {
       .attr('x', 5)
       .attr('dy', '1.2em');
 
+    tooltipText.append('tspan')
+      .attr('id', 'femaleCount')
+      .attr('x', 5)
+      .attr('dy', '1em');
+
     // functions for hover later
     const bisectDate = d3.bisector(d => d.date).left;
     const mousemove = () => {
@@ -146,7 +151,8 @@ $(() => {
 
         // draw tooltip
         svg.select('#dateSpan').text(`${d3.timeFormat('%b')(parseMonth(d.month))} ${d.year}`);
-        svg.select('#femaleSpan').text(`Female Inmates: ${d3.format(',')(d.inmates)}`);
+        svg.select('#femaleSpan').text('Female inmates:');
+        svg.select('#femaleCount').text(`${d3.format(',')(d.inmates)}`);
 
         const xPosition = (mouse[0] + tooltipWidth > width) ?
           mouse[0] - tooltipWidth - 10 : mouse[0] + 20;
