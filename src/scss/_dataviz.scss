@@ -58,6 +58,44 @@
     stroke: $black33;
     stroke-width: 2;
   }
+
+  .line {
+    fill: none;
+    stroke: $chartBlue;
+    stroke-width: 1.5;
+  }
+
+  .focus {
+    line.y {
+      stroke: $black33;
+      stroke-dasharray: 3,3;
+      opacity: 0.5;
+    }
+  }
+
+  circle {
+    stroke: $black33;
+    fill: $chartBlue;
+    opacity: 0.7;
+  }
+
+  .tooltip {
+    rect {
+      stroke: $black33;
+      fill: white;
+      opacity: 0.9;
+    }
+
+    tspan {
+      text-anchor: left;
+      font-size: 11px;
+    }
+  }
+
+  .overlay {
+    fill: none;
+    pointer-events: all;
+  }
 }
 
 .d3tip {
