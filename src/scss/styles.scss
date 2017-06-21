@@ -533,8 +533,12 @@ $lg__overlay_height: 505px;
     width: 66%;
     clear: both;
   }
+  .col-desk {
+    font-weight: bold;
+  }
   .col-mobile {
     display: none;
+    font-weight: bold;
   }
   @media (max-width: 740px) {
     img {

@@ -80,13 +80,13 @@ SETTING UP THE OPENING ANIMATION
   // after that
   setTimeout(() => {
     advanceSlides();
-    advanceTimer = setInterval(() => { advanceSlides(); }, 6000);
+    advanceTimer = setInterval(() => { advanceSlides(); }, 4000);
 
     // also, start the progress interval to animate our progress through the slides
     const progress = setInterval(() => {
-      if (counter < 24000) {
+      if (counter < 16000) {
         counter += 50;
-        const percentage = (counter / 24000) * 100;
+        const percentage = (counter / 16000) * 100;
         $('#slide__progress').css('width', `${percentage}%`);
       } else {
         clearInterval(progress);
