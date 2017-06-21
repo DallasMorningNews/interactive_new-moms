@@ -1,45 +1,42 @@
-@import 'variables';
+@import '_variables';
 
 .data {
   font-family: $sans;
   display: block;
-  margin: 0 auto;
-  max-width: 600px;
+  margin: 4.8rem auto 4.8rem;
+  max-width: 650px;
 
-  h4, p {
-    color: #4d4d4d;
-  }
-
-  h4 {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
+  h5 {
+    color: $black33;
+    font-weight: bold;
   }
 
   p {
-    font-size: 15px;
-    line-height: 20px;
-    margin-bottom: 25px;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   p.sourceLine {
     font-family: $sans;
   	width: 100%;
-  	max-width: 650px;
   	margin: 0 auto;
-    margin-bottom: 20px;
-    color: #797470;
+    color: $black33;
+    font-size: 1.1rem;
   }
 
-
   .axis-title {
-    fill: black;
+    fill: $black33;
     font-family: $sans;
-    font-size: 12px;
+    font-size: 1.1rem;
   }
 
   .axis {
-    font-size: 12px;
+    font-size: 1.1rem;
+    fill-color: $black121;
+    path {
+      stroke: $black121;
+    }
   }
 
   .y.axis .tick line{
@@ -48,9 +45,9 @@
   }
 
   .dot {
-    fill: $chartGray;
-    fill-opacity: 0.5;
-    stroke: $black33;
+    fill: $dmnblue;
+    fill-opacity: .65;
+    stroke: white;
 
     &:hover {
       cursor: pointer;
@@ -59,7 +56,7 @@
 
   .trendline {
     stroke: $black33;
-    stroke-width: 1;
+    stroke-width: 2;
   }
 
   .line {
@@ -106,10 +103,23 @@
   // font-weight: bold;
   padding: 10px;
   background: white;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 1px;
   font-family: $sans;
   font-size: 14px;
   z-index: 10;
+  box-shadow: 1.5px 1.5px 3px rgba($black121, .25), -1.5px -1.5px 3px rgba($black121, .25), -1.5px 1.5px 3px rgba($black121, .25), 1.5px -1.5px 3px rgba($black121, .25);
+}
+.tip-date {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid $black215;
+  margin-bottom: .6rem;
+  display: block;
+}
+.fem-perct {
+  font-size: 2.4rem;
+  line-height: 3rem;
+  font-weight: bold;
+  margin-bottom: .3rem;
+  display: block;
 }
