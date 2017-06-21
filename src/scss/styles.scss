@@ -8,7 +8,7 @@
 @import 'dataviz';
 
 @import 'components/_videos';
-@import 'components/slideshows';
+@import 'components/_slideshows';
 
 
 /*
@@ -154,6 +154,12 @@
   #slide-5 {
     background-image: url('../images/kylia2-1200.jpg');
   }
+  #slide__timer {
+    bottom: 125px;
+  }
+  #slides__skip {
+    bottom: 100px;
+  }
 }
 
 
@@ -175,6 +181,12 @@
   opacity: 0;
   top: 100px;
   @include transition(all, 1s, ease-out);
+}
+
+@media (max-width: 550px) and (orientation: portrait) {
+  #story-head {
+    margin-top: -20vh;
+  }
 }
 
 
@@ -611,7 +623,7 @@ $lg__overlay_height: 505px;
 @media (max-width: 650px) {
   .subscribe-cta {
     width: 100%;
-    margin: 0 0 2.4rem; 
+    margin: 0 0 2.4rem;
   }
 }
 

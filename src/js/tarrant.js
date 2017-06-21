@@ -68,7 +68,7 @@ $(() => {
       } else if (coords[0] < fullWidth - 50 && coords[0] > fullWidth - 150) {
         return [-10, -100];
       } else if (coords[1] < 50) {
-        return [80, 0];
+        return [130, 0];
       }
       return [-10, 0];
     })
