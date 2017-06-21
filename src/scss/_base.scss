@@ -209,7 +209,6 @@ IV. CONTENT WELL
   margin: 0 auto 2.4rem auto;
   &.twitter-tag {
       font-style: italic;
-      margin-top: 4.8rem;
   }
 }
 .content-well > p:last-of-type {
@@ -374,6 +373,10 @@ VI. IMAGE, WIDE, FULL AND INLINE BLOCKS
   font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 1.4rem;
   line-height: 1.8rem;
+  &.cutline {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
 }
 .inline-block h4 {
   font-weight: bold;

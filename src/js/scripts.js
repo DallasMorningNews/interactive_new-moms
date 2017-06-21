@@ -91,7 +91,7 @@ SETTING UP THE OPENING ANIMATION
         clearInterval(progress);
       }
     }, 50);
-  }, 500);
+  }, 250);
 
 
   // when the intro skip button i sclicked, hide the timer and the button,
