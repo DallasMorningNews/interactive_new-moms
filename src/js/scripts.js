@@ -5,6 +5,7 @@ import $ from 'jquery';
 import './furniture';
 import './easyslide';
 import './tarrant';
+import './state-inmates';
 
 $(document).ready(() => {
 /*
