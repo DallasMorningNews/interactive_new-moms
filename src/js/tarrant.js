@@ -72,7 +72,8 @@ $(() => {
       }
       return [-10, 0];
     })
-    .html(d => `<strong>${d3.timeFormat('%b')(parseMonth(d.month))} ${d.year}</strong><br><strong>Total Inmates: </strong> ${d3.format(',')(d.totalInmates)} </br><strong>Percent Female: </strong> ${d3.format('.1%')(d.percFemale)}`);
+    .html(d => `<span class="tip-date">${d3.timeFormat('%b')(parseMonth(d.month))} ${d.year}</span>
+    <strong>Percent female: </strong><br /> <span class="fem-perct">${d3.format('.1%')(d.percFemale)}</span><strong>Total inmates: </strong> ${d3.format(',')(d.totalInmates)}`);
   svg.call(tip);
 
   // data
@@ -112,13 +113,13 @@ $(() => {
         .attr('y', -20)
         .attr('dy', '.71em')
         .style('text-anchor', 'start')
-        .text('Percent Female Inmates');
+        .text('Percent female inmates');
 
     svg.selectAll('.dot')
         .data(data)
       .enter().append('circle')
         .attr('class', 'dot')
-        .attr('r', 3.5)
+        .attr('r', 5)
         .attr('cx', d => x(d.date))
         .attr('cy', d => y(d.percFemale))
         .on('mouseover', tip.show)
