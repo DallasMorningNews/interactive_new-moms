@@ -209,7 +209,7 @@ IV. CONTENT WELL
   margin: 0 auto 2.4rem auto;
   &.twitter-tag {
       font-style: italic;
-      margin-bottom: 4.8rem;
+      margin-bottom: 4.8rem !important;
   }
 }
 .content-well > p:last-of-type {
